@@ -1,6 +1,8 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
 from django.contrib.auth.models  import User
+from decimal import Decimal
+from django.core.validators import MinValueValidator
 
 # Create your models here.
 SAFE_GOODS_CHOICES = (
@@ -16,8 +18,10 @@ ROLES = (
 #  Product info
 class Product(models.Model):
     item_number = models.CharField(max_length=11)
+    product_image = models.ImageField(upload_to="images/", default="images/sample_product.jpg")
+    product_price_in_dollars = models.DecimalField(decimal_places=2, max_digits=12, validators=[MinValueValidator(Decimal('0.01'))])
     description = models.CharField(max_length=400)
-    quantity = models.IntegerField()
+    quantity = models.PositiveIntegerField()
     serial_number = models.CharField(max_length=12, blank=True, null=True)
     batch_number = models.CharField(max_length=21, blank=True, null=True)
     rev_number = models.CharField(max_length=3, blank=True, null=True)
@@ -29,9 +33,10 @@ class Product(models.Model):
 #  How are the goods packeged for the customer
 
 class Package(models.Model):
+    product = models.ForeignKey(Product, on_delete=CASCADE)
     bill_reference = models.CharField(max_length=200, blank=True, null=True)
     invoice_reference = models.CharField(max_length=200,blank=True, null=True)
-    size = models.IntegerField(blank=True, null=True)
+    size = models.PositiveIntegerField(blank=True, null=True)
     weight = models.CharField(max_length=120, blank=True, null=True)
     country_of_origin = models.CharField(max_length=200) 
     is_a_dangerous_good = models.IntegerField(choices=SAFE_GOODS_CHOICES, default=0)

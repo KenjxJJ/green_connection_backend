@@ -1,6 +1,7 @@
-# from django.contrib import admin
-# from django.urls import path
+from django.urls import path
+from . import views 
 
-# urlpatterns = [
-# path("", views.index)
-# ]
+urlpatterns = [
+    path("api/products/", views.products_list),
+    path("api/product/:id", views.product_detail)
+]
