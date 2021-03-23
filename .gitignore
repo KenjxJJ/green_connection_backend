@@ -1,0 +1,15 @@
+*.pyc
+*~
+/.vscode
+__pycache__
+db.sqlite3
+.DS_Store
+.vscode/
+uploads/
+static/CACHE
+node_modules/
+angelenv/
+
+staticfiles/CACHE/
+green_hub_platform_app/migrations/
+
