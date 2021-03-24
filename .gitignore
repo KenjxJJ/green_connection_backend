@@ -9,7 +9,7 @@ uploads/
 static/CACHE
 node_modules/
 angelenv/
-
+.env/
 staticfiles/CACHE/
 green_hub_platform_app/migrations/
 
