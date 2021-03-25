@@ -35,7 +35,7 @@ class Package(models.Model):
     weight = models.CharField(max_length=120, blank=True, null=True)
     country_of_origin = models.CharField(max_length=200) 
     is_a_dangerous_good = models.IntegerField(choices=SAFE_GOODS_CHOICES, default=0)
-    date_of_arrival = models.DateTimeField()
+    date_of_arrival = models.DateField()
     is_recieved = models.BooleanField(default=False)
 
     def __str__(self):
@@ -56,7 +56,7 @@ class Invoice(models.Model):
     product = models.ForeignKey(Product, on_delete=CASCADE)
     date_of_order = models.DateTimeField(auto_now_add=True)
     package = models.ForeignKey(Package,on_delete=CASCADE)
-    user = models.ForeignKey(Profile, on_delete=CASCADE)
+    user = models.ForeignKey(User, on_delete=CASCADE)
     is_paid_or_cleared = models.BooleanField(default=False)
 
     def __str__(self):
