@@ -67,7 +67,7 @@ class PackageViewSet(viewsets.ModelViewSet):
     "is_a_dangerous_good": 1,
     "date_of_arrival": "2021-03-18",
     "is_recieved": true
-}
+    }
     delete:
         Delete a Product
     PUT:
