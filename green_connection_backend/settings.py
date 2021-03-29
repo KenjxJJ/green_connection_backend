@@ -79,18 +79,17 @@ WSGI_APPLICATION = 'green_connection_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':  'django.contrib.gis.db.backends.postgis',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
-        'TEST': {
-            'NAME': 'test twous'
-        }
+        'ENGINE':  'django.db.backends.mysql',
+        'NAME': 'greenconnection',
+        'USER': 'greenconnection',
+        'PASSWORD': 'greenconnection',
+        'HOST': 'localhost',
+        'PORT': '3306',
+     
 
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
