@@ -43,14 +43,13 @@ class ProductViewSet(viewsets.ModelViewSet):
 
     queryset = Product.objects.all().order_by('-id')
     serializer_class = ProductSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
 
 
 class PackageViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows sectors to be viewed or edited.
-    """
-    """
+   
     retrieve:
         retrieve a sigle Product by its id
     list:
@@ -78,16 +77,14 @@ class PackageViewSet(viewsets.ModelViewSet):
 
     queryset = Package.objects.all().order_by('-id')
     serializer_class = PackageSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
 
 
 
 class InvoiceViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows sectors to be viewed or edited.
-    """
-
-    """
+    
     retrieve:
         retrieve a sigle Invoice by its id
     list:
@@ -112,7 +109,7 @@ class InvoiceViewSet(viewsets.ModelViewSet):
 
     queryset = Invoice.objects.all().order_by('-id')
     serializer_class = InvoiceSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
 
 
 
