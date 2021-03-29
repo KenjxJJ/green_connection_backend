@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'green_connection_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':  'django.db.backends.mysql',
-        'NAME': 'greenconnection',
+        'NAME': 'angelnagaba$greenconnection',
         'USER': 'angelnagaba',
         'PASSWORD': 'greenconnection',
         'HOST': '',
