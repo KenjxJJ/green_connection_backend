@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE':  'django.db.backends.mysql',
         'NAME': 'greenconnection',
-        'USER': 'greenconnection',
+        'USER': 'angelnagaba',
         'PASSWORD': 'greenconnection',
         'HOST': 'localhost',
         'PORT': '3306',
