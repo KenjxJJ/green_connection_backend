@@ -83,8 +83,8 @@ DATABASES = {
         'NAME': 'greenconnection',
         'USER': 'angelnagaba',
         'PASSWORD': 'greenconnection',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'HOST': '',
+        'PORT': 3306,
      
 
     }
