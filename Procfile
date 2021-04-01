@@ -1,3 +1,3 @@
 release: python manage.py makemigrations --no-input
 release: python manage.py migrate --no-input
-web: gunicorn mysite.wsgi
+web: gunicorn green_connection_backend.wsgi
